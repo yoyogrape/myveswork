@@ -1,0 +1,123 @@
+<style>
+    .panel .datagrid-body tr{
+        background: none!important;
+    }
+    .panel .datagrid-body  tr td a:nth-child(3){
+        margin-top: -5px;
+    }
+    #remark{
+        color: #333
+    }
+    /*去掉滚动条*/
+    .panel .accordion-body .bootstrap-table{
+        height: 98%!important;
+    }
+    /*好神奇*/
+    .fixed-table-loading {
+        display: none!important;
+    }
+    #Remarks{ width: 800px; overflow: hidden;  color: #666666; max-width: 800px; height: 80px; max-height: 80px ; overflow: auto}
+    #Keyword{ width: 800px; overflow: hidden;  color: #666666; height: 150px; margin-top: 20px;height: 130px;}
+    .Keywordlabel { vertical-align: top; width: 120px; text-align: right; margin-top: 20px}
+    .Keywordbtn { float: right; margin-right: 10px; background: rgba(0,0,0,0.3)}
+</style>
+<div id="ves_module_logmgr_management_snmptactics_detail"
+     class="easyui-accordion  ves-window-rightmenu ves_module_logmgr_management_snmptactics_detail dialog-accordion-layout" style="margin-left: -4px">
+    <div title="基本信息" class="changedefaultheight">
+        <form class="ves-form col1 baseInfo_form  ">
+            <input type="hidden" name="id" value="7777">
+            <table style=" width:100%;" class="tab-border">
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">事件名称</td>
+                    <td>
+                        <input type="text" name="eventName" required="required"/>
+                        <p id="nameText" style="float: right; position: relative; right: 573px; margin: 0;color: #DD5145"></p>
+                    </td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">事件级别</td>
+                    <td>
+                        <div class="col-sm-10" style="padding-left: 36px;">
+                            <div class="checkbox-list">
+                                <label class="checkbox-inline ">
+                                    <input type="radio" name="eventLevel" value="CRITICAL" checked="checked">致命</label>
+                                <label class="checkbox-inline ">
+                                    <input type="radio" name="eventLevel" value="SERIOUS">严重</label>
+                                <label class="checkbox-inline ">
+                                    <input type="radio" name="eventLevel" value="WARN">警告</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">创建人</td>
+                    <td><span id="createUser"></span>
+                        <input type="hidden" name="n_createUser" value="">
+                    </td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">创建时间</td>
+                    <td><div><span id="createTime"></span>
+                        <input type="hidden" name="n_createTime" >
+                    </div></td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">修改人</td>
+                    <td><div><span id="updateUser"></span>
+                        <input type="hidden" name="n_updateUser"  value="">
+                    </div></td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">修改时间</td>
+                    <td><div><span id="updateTime"></span>
+                        <input type="hidden" name="n_updateTime" >
+                    </div></td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">事件描述</td>
+                    <td><div>
+                        <textarea name="n_remark" id="remark" ></textarea>
+                    </div></td>
+                </tr>
+            </table>
+        </form>
+            <button class="btn bg-dark btn-flat pull-right m-r-5" id="res_saveBtn" style="margin-left: 5px; color: #fff">
+                保存
+            </button>
+            <!--<a class="defineBtn" style="float: right; margin-top:10px;" href="javascript:void(0);"></a>-->
+    </div>
+    <div title="资源及指标选择" disabled="true">
+        <p class="explainText" style="color: #DD5145; position: relative; left: 30px; top: 12px; font-size: 15px;float: left;" >说明：所有条件必须都满足。</p>
+        <div>
+            <div class="btn-group pull-right m-r-5">
+                <button class="btn bg-dark btn-flat" id="res_addEventBtn" style="margin-left: 5px; color: #fff">
+                    新建
+                </button>
+                <button class="btn bg-dark btn-flat" id="res_editEventBtn" style="margin-left: 5px; color: #fff">
+                    编辑
+                </button>
+                <button class="btn bg-dark btn-flat" id="res_delEventBtn" style="margin-left: 5px; color: #fff">
+                    删除
+                </button>
+            </div>
+        </div>
+        <table id="res_selectTab"></table>
+
+    </div>
+
+    <div title="告警规则" style="">
+        <div class="btn-group pull-right m-r-5">
+            <button class="btn bg-dark btn-flat" id="res_addAlarmRumeTabBtn" style="margin-left: 5px; color: #fff">
+                添加
+            </button>
+            <!--<button class="btn bg-dark btn-flat" id="res_applAlarmBtn" style="margin-left: 5px; color: #fff">-->
+                <!--应用-->
+            <!--</button>-->
+            <button class="btn bg-dark btn-flat" id="res_delalarmRumeTabBtn" style="margin-left: 5px; color: #fff">
+                删除
+            </button>
+        </div>
+        <table id="res_alarmRumeTab"></table>
+    </div>
+</div>
+

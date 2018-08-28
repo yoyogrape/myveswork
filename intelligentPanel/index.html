@@ -1,0 +1,33 @@
+<style>
+    #faultPolicyTable tr {
+        cursor: pointer;
+    }
+    .bootstrap-table .fixed-table-toolbar .search{
+        display: none;
+    }
+</style>
+<div class="box-header">
+    <h3 class="box-title pull-left">自定义基线</h3>
+    <div class="box-line"></div>
+</div>
+
+    <div id="box-body" style="overflow: auto;padding: 15px;">
+        <div>
+            <div class="btn-group pull-right m-r-5">
+                <button class="btn bg-dark btn-flat" id="addEventBtn" style="margin-left: 5px; color: #fff">
+                    <i class="fa fa-plus"></i>
+                    新建
+                </button>
+                <button class="btn bg-dark btn-flat" id="editEventBtn" style="margin-left: 5px; color: #fff">
+                    <i class="fa fa-pencil-square-o"></i>
+                    编辑
+                </button>
+                <button class="btn bg-dark btn-flat del-btn" style="margin-left: 5px; color: #fff">
+                    <i class="fa fa-remove"></i>
+                    删除
+                </button>
+            </div>
+        </div>
+
+    <table id="helloword" style="width: 100%;overflow-x: hidden" data-search="true" data-toolbar-align="right" data-buttons-align="right"></table>
+</div>

@@ -1,0 +1,167 @@
+<style>
+    .dialog {
+        position: relative;
+        height: 450px;
+        border: 1px solid #7296c4;
+        background: #233959;
+        margin: 2px;
+        padding: 15px 2px 2px 2px ;
+    }
+    .dialog .top {
+        height: 30px ;
+    }
+    .dialog .top div {
+        height: 30px;
+        padding-left: 10px;
+        line-height: 30px;
+    }
+    .dialog .top div>span:first-child {
+        display: inline-block;
+        width: 55px;
+        text-align: left;
+        margin-right: 5px;
+    }
+    .dialog .validatebox-text {
+        height: 22px!important;
+    }
+    .dialog .combo-arrow {
+        background-position-y: 6px!important;
+    }
+    .dialog .combo-arrow:before ,.dialog .combo-arrow:after{
+        top:8px!important;
+    }
+    .textbox-text.validatebox-text {
+        height: 24px;
+        position: absolute;
+        top:0;
+    }
+    .dialog .top div input {
+        border-radius: 0;/*去掉圆角*/
+        border: none;
+        outline: none;
+        padding-left: 5px;
+
+        color: #969494;
+        margin-right: 15px;
+    }
+    .dialog .bottom {
+        position: absolute;
+        top:60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+
+    }
+    .dialog .bottom>div {
+        height: 100%;
+        width:286px!important;
+        position: relative;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+    }
+    .dialog .bottom .left .fixed-table-loading{
+        display: none;
+    }
+
+    .dialog .bottom  .h{
+        height:30px;
+        background: #1b2e48;
+        line-height: 30px;
+        padding-left: 10px;
+    }
+    .dialog .bottom  .h div {
+        float: left;
+        margin-right: 10px;
+        line-height: 30px;
+    }
+    .dialog .bottom .left .h div #searchVal {
+        height: 24px;
+        border: none;
+        color: #969494;
+        padding-left: 5px;
+        outline: none;
+        border-radius: 0;/*去掉圆角*/
+    }
+    .dialog .bottom .m {
+        margin: 0 10px;
+    }
+    .dialog .bottom .left .h  .search-btn {
+        width: 55px;
+        height: 24px;
+        background: #32435b url("/static/dist/img/btn-search.png") no-repeat 1px center;
+        padding-left: 20px;
+        margin-top: 3px;
+        line-height: 25px;
+        cursor: pointer;
+        border-radius:  0;/*去掉圆角*/
+    }
+    .dialog .bottom tbody {
+        display: block;
+        height:100%;
+        overflow-y: auto;
+    }
+    .dialog .bottom tbody tr {
+        display: -webkit-box;
+        display: -moz-box;
+        display:-webkit-flex;
+        display: -ms-flexbox;
+        display:flex;
+    }
+    .combo-panel {
+        max-height: 198px!important;
+    }
+    .fixed-table-loading{
+        display: none;
+    }
+    #choosedIndex select {
+        color: #333;
+
+    }
+    #choosedIndex input {
+        color: #333;
+
+    }
+</style>
+<div class="dialog">
+    <div class="top">
+        <div><span>资源类型 : </span><input id="cc1" placeholder="请选择资源类型">
+
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="left">
+            <div class="search">
+                <input type="hidden" id="id" value="">
+                <div class="h">
+                    <div>选择资源 : </div>
+                    <div><input id="searchVal" placeholder="请输入IP或者资源名称" type="text"></div>
+                    <div class="search-btn">搜索</div>
+                </div>
+            </div>
+            <div id= "tableLeft">
+
+            </div>
+        </div>
+        <div class="left m">
+            <div class="h">
+                <div>选择子资源: </div>
+
+            </div>
+            <div id= "choosedTable">
+
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="h">
+                <div>选择指标: </div>
+
+            </div>
+            <div id= "choosedIndex">
+
+
+            </div>
+        </div>
+    </div>
+</div>

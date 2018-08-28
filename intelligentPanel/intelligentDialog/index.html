@@ -1,0 +1,114 @@
+<style>
+    .panel .datagrid-body tr{
+        background: none!important;
+    }
+    .panel .datagrid-body  tr td a:nth-child(3){
+        margin-top: -5px;
+    }
+    #remark{
+        color:#333
+    }
+    /*去掉滚动条*/
+    .panel .accordion-body .bootstrap-table{
+        height: 98%!important;
+    }
+    .fixed-table-loading {
+        display: none!important;
+    }
+
+</style>
+<div id="ves_module_intelligent_detail"
+     class="easyui-accordion  ves-window-rightmenu ves_module_logmgr_management_snmptactics_detail dialog-accordion-layout" style="margin-left: -4px">
+    <div title="基本信息" class="changedefaultheight">
+        <form class="ves-form col1 baseInfo_form  ">
+            <table style=" width:100%;" class="tab-border">
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">基线名称</td>
+                    <td>
+                        <input type="text" name="intelligentName" required="required"/>
+                        <p id="nameText" style="float: right; position: relative; right: 573px; margin: 0;color: #DD5145"></p>
+                    </td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">基线类型</td>
+                    <td>
+                        <div class="col-sm-10" style="padding-left: 36px;">
+                            <div class="checkbox-list">
+                                <label class="checkbox-inline ">
+                                    <input type="radio" name="baselineType" value="D" checked="checked">日基线</label>
+                                <label class="checkbox-inline ">
+                                    <input type="radio" name="baselineType" value="W">周基线</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">创建人</td>
+                    <td><span id="createUser"></span>
+                        <input type="hidden" name="createUser" value="">
+                    </td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">创建时间</td>
+                    <td><div><span id="createTime"></span>
+                        <input type="hidden" name="createTime" >
+                    </div></td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">修改人</td>
+                    <td><div><span id="updateUser"></span>
+                        <input type="hidden" name="updateUser"  value="">
+                    </div></td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">修改时间</td>
+                    <td><div><span id="updateTime"></span>
+                        <input type="hidden" name="updateTime" >
+                    </div></td>
+                </tr>
+                <tr class="form-group h-pad-mar">
+                    <td class="td-bgcolor">基线描述</td>
+                    <td><div>
+                        <textarea name="n_remark" id="remark" ></textarea>
+                    </div></td>
+                </tr>
+            </table>
+        </form>
+            <button class="btn bg-dark btn-flat pull-right m-r-5" id="res_saveBtn" style="margin-left: 5px; color: #fff">
+                保存
+            </button>
+    </div>
+    <div title="资源及指标选择" >
+        <div>
+            <div class="btn-group pull-right m-r-5">
+                <button class="btn bg-dark btn-flat" id="res_addEventBtn" style="margin-left: 5px; color: #fff">
+                    新建
+                </button>
+                <button class="btn bg-dark btn-flat" id="res_editEventBtn" style="margin-left: 5px; color: #fff">
+                    编辑
+                </button>
+                <button class="btn bg-dark btn-flat" id="res_delEventBtn" style="margin-left: 5px; color: #fff">
+                    删除
+                </button>
+            </div>
+        </div>
+        <table id="res_selectTab"></table>
+
+    </div>
+
+    <div title="告警规则" style="">
+        <div class="btn-group pull-right m-r-5">
+            <button class="btn bg-dark btn-flat" id="res_addAlarmRumeTabBtn" style="margin-left: 5px; color: #fff">
+                添加
+            </button>
+            <!--<button class="btn bg-dark btn-flat" id="res_applAlarmRumeTabBtn" style="margin-left: 5px; color: #fff">-->
+                <!--应用-->
+            <!--</button>-->
+            <button class="btn bg-dark btn-flat" id="res_delalarmRumeTabBtn" style="margin-left: 5px; color: #fff">
+                删除
+            </button>
+        </div>
+        <table id="res_alarmRumeTab"></table>
+    </div>
+</div>
+
